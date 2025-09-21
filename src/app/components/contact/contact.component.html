@@ -1,0 +1,83 @@
+<section id="contact" class="contact" @fadeInUp>
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Let's work together</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info" @fadeInUp>
+        <div class="contact-intro">
+          <h3>Let's Start a Conversation</h3>
+          <p>
+            I'm always interested in new opportunities, whether it's a challenging project, 
+            a collaboration, or just a friendly chat about technology. Feel free to reach out!
+          </p>
+        </div>
+
+        <div class="contact-details">
+          @for (item of contactInfo; track item.title) {
+            <a [href]="item.link" class="contact-item" target="_blank">
+              <div class="contact-icon" [style.background]="item.color">
+                <i [class]="item.icon"></i>
+              </div>
+              <div class="contact-content">
+                <h4>{{item.title}}</h4>
+                <p>{{item.value}}</p>
+              </div>
+              <div class="contact-arrow">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </a>
+          }
+        </div>
+
+        <div class="social-links">
+          <h4>Follow Me</h4>
+          <div class="social-grid">
+            @for (social of socialLinks; track social.name) {
+              <a [href]="social.url" class="social-item" target="_blank" [style.background]="social.color">
+                <i [class]="social.icon"></i>
+                <span>{{social.name}}</span>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container" @fadeInUp>
+        <div class="form-card">
+          <h3>Send Me a Message</h3>
+          
+          <form class="contact-form">
+            <div class="form-group" @fadeInUp>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group" @fadeInUp>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group" @fadeInUp>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="What is this regarding?">
+            </div>
+            
+            <div class="form-group" @fadeInUp>
+              <label for="message">Your Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" @pulse>
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

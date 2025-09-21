@@ -1,0 +1,68 @@
+<section id="experience" class="experience" @fadeInUp>
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">My professional journey</p>
+    </div>
+    
+    <div class="experience-timeline" @listStagger>
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <div class="timeline-item" [class.current]="exp.current" @fadeInUp>
+          <div class="timeline-marker">
+            <div class="marker-icon" [style.background]="exp.color">
+              <i [class]="exp.icon"></i>
+            </div>
+            <div class="timeline-line" [class.active]="exp.current"></div>
+          </div>
+          
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="card-header">
+                <div class="company-info">
+                  <h3 class="company-name">{{exp.company}}</h3>
+                  <p class="position">{{exp.position}}</p>
+                </div>
+                <div class="period-badge">
+                  <span class="period">{{exp.period}}</span>
+                  @if (exp.current) {
+                    <span class="current-badge">Current</span>
+                  }
+                </div>
+              </div>
+              
+              <div class="card-body">
+                <ul class="achievement-list">
+                  @for (item of exp.description; track item) {
+                    <li class="achievement-item">
+                      <i class="fas fa-check-circle"></i>
+                      <span>{{item}}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+              
+              <div class="card-footer">
+                <div class="tech-tags">
+                  @if (exp.current) {
+                    <span class="tech-tag">Team Leadership</span>
+                    <span class="tech-tag">AWS Administration</span>
+                    <span class="tech-tag">CI/CD</span>
+                  } @else if (i === 1) {
+                    <span class="tech-tag">Defense Projects</span>
+                    <span class="tech-tag">Team Management</span>
+                    <span class="tech-tag">Documentation</span>
+                  } @else {
+                    <span class="tech-tag">Oracle DB</span>
+                    <span class="tech-tag">Java/JSP</span>
+                    <span class="tech-tag">Mentoring</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

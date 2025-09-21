@@ -1,0 +1,81 @@
+<section id="awards" class="awards" @fadeInUp>
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <h2 class="section-title">Awards & Achievements</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">My accomplishments over the years</p>
+    </div>
+
+    <div class="awards-container">
+      <div class="awards-timeline" @listStagger>
+        @for (award of awards; track award.title; let i = $index) {
+          <div class="timeline-item" [class.right]="i % 2 === 0" @fadeInUp>
+            <div class="timeline-marker">
+              <div class="marker-icon" [style.background]="award.color">
+                <i [class]="award.icon"></i>
+              </div>
+              <div class="timeline-line"></div>
+            </div>
+            
+            <div class="timeline-content">
+              <div class="award-card">
+                <div class="award-year">{{award.year}}</div>
+                <h3 class="award-title">{{award.title}}</h3>
+                <p class="award-organization">{{award.organization}}</p>
+                <p class="award-description">{{award.description}}</p>
+                <div class="award-footer">
+                  <div class="award-badge" [style.background]="award.color">
+                    <i [class]="award.icon"></i>
+                    Achievement
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="awards-summary" @fadeInUp>
+        <div class="summary-card">
+          <h3>Achievements Overview</h3>
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat-number">{{awards.length}}</div>
+              <div class="stat-label">Total Awards</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Different Categories</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">2014-2017</div>
+              <div class="stat-label">Time Span</div>
+            </div>
+          </div>
+          
+          <div class="categories">
+            <h4>Award Categories</h4>
+            <div class="category-list">
+              <div class="category-item">
+                <div class="category-dot" style="background: #FFD700;"></div>
+                <span>Academic Excellence</span>
+              </div>
+              <div class="category-item">
+                <div class="category-dot" style="background: #C0C0C0;"></div>
+                <span>Sports Achievement</span>
+              </div>
+              <div class="category-item">
+                <div class="category-dot" style="background: #CD7F32;"></div>
+                <span>Scholarships</span>
+              </div>
+              <div class="category-item">
+                <div class="category-dot" style="background: #4f46e5;"></div>
+                <span>Technical Competitions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
