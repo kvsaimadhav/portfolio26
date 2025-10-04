@@ -7,6 +7,29 @@ import { fadeInUp, bounceIn, pulse } from '../../animations';
   imports: [],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
-  animations: [fadeInUp, bounceIn, pulse] // Add animations
+  animations: [fadeInUp, bounceIn, pulse]
 })
-export class HeroComponent {}
+export class HeroComponent {
+  
+  scrollToContact(event: Event): void {
+    event.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+
+  scrollToExperience(event: Event): void {
+    event.preventDefault();
+    const experienceSection = document.getElementById('experience');
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+}

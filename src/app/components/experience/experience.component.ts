@@ -22,7 +22,7 @@ interface Experience {
 export class ExperienceComponent {
   experiences: Experience[] = [
     {
-      company: 'Kenexcel Software Private Limited',
+      company: 'Ekluvya',
       position: 'Senior Software Developer',
       period: 'Dec 2024 – Present',
       icon: 'fas fa-laptop-code',

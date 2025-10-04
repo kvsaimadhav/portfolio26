@@ -6,8 +6,8 @@
         <h2 class="hero-title" @fadeInUp>Senior Software Developer</h2>
         <p class="hero-description" @fadeInUp>Cloud & Database Specialist | AWS Expert | Team Leader</p>
         <div class="hero-buttons" @fadeInUp>
-          <a href="#contact" class="btn btn-primary" @pulse>Hire Me</a>
-          <a href="#experience" class="btn btn-secondary">View Experience</a>
+          <a href="#contact" class="btn btn-primary" @pulse (click)="scrollToContact($event)">Hire Me</a>
+          <a href="#experience" class="btn btn-secondary" (click)="scrollToExperience($event)">View Experience</a>
         </div>
       </div>
       <div class="hero-image" @bounceIn>
@@ -18,8 +18,8 @@
         </div>
       </div>
     </div>
-    <div class="scroll-indicator" @fadeInUp>
-      <span>Scroll Down</span>
+    <div class="scroll-indicator" @fadeInUp (click)="scrollToContact($event)">
+      <span>Contact Me</span>
       <i class="fas fa-chevron-down"></i>
     </div>
   </div>

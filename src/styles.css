@@ -2,15 +2,58 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 /* @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap'); */
 
+/* Global Color Variables for Components */
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --secondary: #facc15;
-  --secondary-light: #fde047;
+  /* Hero Component Colors */
+  --hero-primary: #667eea;
+  --hero-secondary: #764ba2;
+  --hero-accent: #f093fb;
+  
+  /* About Component Colors */
+  --about-bg-start: #f5f7fa;
+  --about-bg-end: #c3cfe2;
+  --about-primary: #4f46e5;
+  --about-secondary: #7c3aed;
+  --about-accent: #06b6d4;
+  
+  /* Experience Component Colors */
+  --exp-primary: #1e3a8a;
+  --exp-secondary: #3730a3;
+  --exp-accent: #6366f1;
+  --exp-card-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Skills Component Colors */
+  --skills-bg-start: #dbeafe;
+  --skills-bg-end: #93c5fd;
+  --skills-primary: #059669;
+  --skills-secondary: #10b981;
+  --skills-accent: #34d399;
+  
+  /* Awards Component Colors */
+  --awards-primary: #7c2d12;
+  --awards-secondary: #c2410c;
+  --awards-accent: #ea580c;
+  --awards-gold: #f59e0b;
+  --awards-silver: #94a3b8;
+  
+  /* Contact Component Colors */
+  --contact-bg-start: #fef7ed;
+  --contact-bg-end: #fed7aa;
+  --contact-primary: #dc2626;
+  --contact-secondary: #ea580c;
+  --contact-accent: #f97316;
+  
+  /* Footer Component Colors */
+  --footer-bg-start: #0f172a;
+  --footer-bg-end: #1e293b;
+  --footer-primary: #6366f1;
+  --footer-secondary: #8b5cf6;
+  --footer-accent: #a855f7;
+  
+  /* Common Colors */
+  --white: #ffffff;
   --text: #333;
   --text-light: #555;
-  --light-bg: #f9fafb;
-  --white: #ffffff;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
 }
