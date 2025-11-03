@@ -11,6 +11,8 @@ import { AwardsComponent } from './components/awards/awards.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollAnimationService } from './services/scroll-animation.service';
+import { EducationComponent } from './components/education/education.component';
+import { ProjectComponent } from './components/project/project.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,8 @@ import { ScrollAnimationService } from './services/scroll-animation.service';
     NavbarComponent,
     HeroComponent,
     AboutComponent,
+    EducationComponent,
+    ProjectComponent,
     ExperienceComponent,
     SkillsComponent,
     AwardsComponent,

@@ -1,0 +1,114 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Projects</h1>
+      <p class="section-subtitle">My Development Portfolio</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Project Filters -->
+    <div class="project-filters">
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'all'"
+        (click)="filterProjects('all')">
+        📂 All Projects
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'masters'"
+        (click)="filterProjects('masters')">
+        📚 Masters
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'github'"
+        (click)="filterProjects('github')">
+        🐙 GitHub
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'academic'"
+        (click)="filterProjects('academic')">
+        🏫 Academic
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'employment'"
+        (click)="filterProjects('employment')">
+        💼 Employment
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div 
+        class="project-card" 
+        *ngFor="let project of filteredProjects"
+        [class.in-progress]="project.status === 'in-progress'">
+        
+        <div class="project-header">
+          <div class="project-category">
+            <span class="category-icon">{{ getCategoryIcon(project.category) }}</span>
+            <span class="category-label">{{ getCategoryLabel(project.category) }}</span>
+          </div>
+          <span class="project-status" [class.completed]="project.status === 'completed'">
+            {{ project.status === 'completed' ? '✅ Completed' : '🔄 In Progress' }}
+          </span>
+        </div>
+
+        <h3 class="project-title">{{ project.title }}</h3>
+        
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="technologies">
+          <span 
+            class="tech-tag" 
+            *ngFor="let tech of project.technologies">
+            {{ tech }}
+          </span>
+        </div>
+
+        <div class="project-links" *ngIf="project.githubUrl || project.liveUrl">
+          <a 
+            *ngIf="project.githubUrl"
+            [href]="project.githubUrl" 
+            target="_blank" 
+            class="project-link">
+            <span class="link-icon">📂</span>
+            GitHub
+          </a>
+          <a 
+            *ngIf="project.liveUrl"
+            [href]="project.liveUrl" 
+            target="_blank" 
+            class="project-link">
+            <span class="link-icon">🌐</span>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Stats -->
+    <div class="projects-stats">
+      <div class="stat-card">
+        <div class="stat-number">{{ projects.length }}+</div>
+        <div class="stat-label">Total Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">{{ getCompletedCount() }}+</div>
+        <div class="stat-label">Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">{{ getTechnologiesCount() }}+</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Categories</div>
+      </div>
+    </div>
+  </div>
+</section>

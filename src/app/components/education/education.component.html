@@ -1,0 +1,47 @@
+<section id="education" class="education-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Education</h1>
+      <p class="section-subtitle">My Academic Journey</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="education-timeline">
+      <div class="education-item" *ngFor="let edu of educationList">
+        <div class="education-header">
+          <h3>{{ edu.degree }}</h3>
+          <span class="duration-badge">{{ edu.duration }}</span>
+        </div>
+        
+        <div class="education-institution">
+          <h4>{{ edu.institution }}</h4>
+          <span class="score-badge">{{ edu.score }}</span>
+        </div>
+        
+        <p class="education-description">{{ edu.description }}</p>
+        
+        <div class="education-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="getProgressWidth(edu.score)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="education-stats">
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Educational<br>Milestones</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">90%+</div>
+        <div class="stat-label">Average<br>Performance</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Years of<br>Learning</div>
+      </div>
+    </div>
+  </div>
+</section>

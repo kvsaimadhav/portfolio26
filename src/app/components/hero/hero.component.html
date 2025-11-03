@@ -12,8 +12,17 @@
       </div>
       <div class="hero-image" @bounceIn>
         <div class="profile-image">
-          <div class="image-placeholder">
-            <i class="fas fa-user-tie"></i>
+          <img 
+            [src]="profilePhoto" 
+            alt="Kaza Venkata Sai Madhav - Senior Software Developer"
+            class="profile-photo"
+            (error)="handleImageError($event)"
+          >
+          <div class="profile-overlay">
+            <div class="profile-badge">
+              <i class="fas fa-code"></i>
+              <span>Available for Work</span>
+            </div>
           </div>
         </div>
       </div>
